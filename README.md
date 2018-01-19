@@ -38,9 +38,17 @@ When using new Application.php and Middleware approach, you also need to adjust 
 
 That's it!
 
+### Debug Mode
+An important note: This plugin is installed as require dependency, but even so it is more used as require-dev one.
+If the debug mode is off, it will completely ignore the Whoops handler, as without debug mode there is no exception to render.
+It will then display the public error message and only log internally.
+
+So make sure you enable debug (locally) for checking out this package.
+For each error and exception you should then see the improved whoops handler output on your screen.
 
 ## Editor
-Opening the file via click in the editor is supported for most major IDEs.
+Opening the file in the editor via click in the browser is supported for most major IDEs.
+It uses `phpstorm://` URLs which can open the file through a command line call and directly jump to the right line.
 
 Set your config as
 ```php
@@ -58,11 +66,6 @@ If you are using a VM, e.g. CakeBox, you will also need the path mapping:
 
 See the Wiki for more details on different OS and Browsers.
 
-## License
-
-Copyright (c)2015, Jad Bitar and licensed under [The MIT License][mit].
-
-[CakePHP 3]:http://cakephp.org
-[Composer]:http://getcomposer.org
-[mit]:http://www.opensource.org/licenses/mit-license.php
-[Whoops]:http://filp.github.io/whoops/
+[CakePHP 3]:https://cakephp.org
+[Composer]:https://getcomposer.org
+[Whoops]:https://filp.github.io/whoops/
