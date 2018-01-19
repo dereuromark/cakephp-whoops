@@ -1,4 +1,7 @@
-[![Build Status](https://travis-ci.org/dereuromark/cakephp-whoops.png?branch=master)](https://travis-ci.org/gourmet/whoops) [![Coverage Status](https://coveralls.io/repos/gourmet/whoops/badge.png?branch=master)](https://coveralls.io/r/gourmet/whoops?branch=master) [![Total Downloads](https://poser.pugx.org/gourmet/whoops/d/total.png)](https://packagist.org/packages/gourmet/whoops) [![Latest Stable Version](https://poser.pugx.org/gourmet/whoops/v/stable.png)](https://packagist.org/packages/gourmet/whoops)
+[![Build Status](https://travis-ci.org/dereuromark/cakephp-whoops.svg?branch=master)](https://travis-ci.org/dereuromark/cakephp-whoops) 
+[![Coverage Status](https://img.shields.io/codecov/c/github/dereuromark/cakephp-whoops/master.svg)](https://codecov.io/github/dereuromark/cakephp-whoops?branch=master) 
+[![Total Downloads](https://poser.pugx.org/dereuromark/cakephp-whoops/d/total.svg)](https://packagist.org/packages/dereuromark/cakephp-whoops) 
+[![Latest Stable Version](https://poser.pugx.org/dereuromark/cakephp-whoops/v/stable.svg)](https://packagist.org/packages/dereuromark/cakephp-whoops)
 
 # Whoops
 
