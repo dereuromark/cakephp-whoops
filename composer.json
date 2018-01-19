@@ -1,14 +1,20 @@
 {
-	"name": "gourmet/whoops",
-	"description": "Whoops for CakePHP 3",
+	"name": "dereuromark/cakephp-whoops",
+	"description": "Whoops error handler for CakePHP",
 	"type": "cakephp-plugin",
 	"keywords": [
 		"cakephp",
-		"whoops"
+		"whoops",
+		"error handler"
 	],
-	"homepage": "http://github.com/gourmet/whoops",
+	"homepage": "http://github.com/dereuromark/cakephp-whoops",
 	"license": "MIT",
 	"authors": [
+		{
+			"name": "Mark Scherer",
+			"homepage": "http://www.dereuromark.de",
+			"role": "Maintainer"
+		},
 		{
 			"name": "Jad Bitar",
 			"homepage": "http://jadb.io",
@@ -16,14 +22,15 @@
 		}
 	],
 	"support": {
-		"issues": "http://github.com/gourmet/whoops/issues",
-		"source": "http://github.com/gourmet/whoops"
+		"issues": "http://github.com/dereuromark/cakephp-whoops/issues",
+		"source": "http://github.com/dereuromark/cakephp-whoops"
 	},
 	"require": {
+		"php": ">=5.6",
 		"filp/whoops": "^2.0"
 	},
 	"require-dev": {
-		"cakephp/cakephp": "^3.0",
+		"cakephp/cakephp": "^3.4",
 		"fig-r/psr2r-sniffer": "dev-master"
 	},
 	"autoload": {
@@ -42,7 +49,7 @@
 		"test-coverage" : "php phpunit.phar --log-junit tmp/coverage/unitreport.xml --coverage-html tmp/coverage --coverage-clover tmp/coverage/coverage.xml",
 		"phpstan": "phpstan analyse -c tests/phpstan.neon -l 3 src",
 		"phpstan-setup": "cp composer.json composer.backup && composer require --dev phpstan/phpstan && mv composer.backup composer.json",
-		"cs-check": "phpcs -p --standard=vendor/fig-r/psr2r-sniffer/PSR2R/ruleset.xml --ignore=/whoops/vendor/,/tmp/,/logs/ --extensions=php ./",
-		"cs-fix": "phpcbf -v --standard=vendor/fig-r/psr2r-sniffer/PSR2R/ruleset.xml --ignore=/whoops/vendor/,/tmp/,/logs/ --extensions=php ./"
+		"cs-check": "phpcs -p --standard=vendor/fig-r/psr2r-sniffer/PSR2R/ruleset.xml --ignore=/cakephp-whoops/vendor/,/tmp/,/logs/ --extensions=php ./",
+		"cs-fix": "phpcbf -v --standard=vendor/fig-r/psr2r-sniffer/PSR2R/ruleset.xml --ignore=/cakephp-whoops/vendor/,/tmp/,/logs/ --extensions=php ./"
 	}
 }
