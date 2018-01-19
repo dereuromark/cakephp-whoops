@@ -9,7 +9,7 @@ Built to seamlessly integrate [Whoops] with [CakePHP 3].
 Using [Composer]:
 
 ```
-composer require gourmet/whoops:~1.0
+composer require gourmet/whoops
 ```
 
 As this plugin only offers a Whoops handler for CakePHP, there is no need to
@@ -24,6 +24,12 @@ with the Whoops handler:
 
 ```php
 (new \Gourmet\Whoops\Error\WhoopsHandler(Configure::read('Error')))->register();
+```
+
+When using new Application.php and Middleware approach, you also need to adjust that:
+```php
+// Replace ErrorHandlerMiddleware with
+ ->add(new \Gourmet\Whoops\Error\Middleware\WhoopsHandlerMiddleware())
 ```
 
 That's it!

@@ -1,13 +1,21 @@
 <?php
 
-namespace Gourmet\Whoops\Error;
+namespace Gourmet\Whoops\Error\Middleware;
 
 use Cake\Core\Configure;
-use Cake\Error\ErrorHandler;
+use Cake\Error\Middleware\ErrorHandlerMiddleware;
+use Cake\Log\Log;
 use Whoops\Handler\PrettyPageHandler;
 use Whoops\Run;
 
-class WhoopsHandler extends ErrorHandler {
+/**
+ * Error handling middleware.
+ *
+ * Custom ErrorHandler to not mix the 404 exceptions with the rest of "real" errors in the error.log file.
+ *
+ * Also uses Whoops
+ */
+class WhoopsHandlerMiddleware extends ErrorHandlerMiddleware {
 
 	/**
 	 * @var \Whoops\Run
@@ -15,33 +23,39 @@ class WhoopsHandler extends ErrorHandler {
 	protected $_whoops;
 
 	/**
-	 * @param array $error
-	 * @param bool $debug
+	 * Log an error for the exception if applicable.
+	 *
+	 * @param \Psr\Http\Message\ServerRequestInterface $request The current request.
+	 * @param \Exception $exception The exception to log a message for.
 	 * @return void
 	 */
-	protected function _displayError($error, $debug) {
-		if (!$debug) {
-			parent::_displayError($error, $debug);
+	protected function logException($request, $exception) {
+		if ($this->is404($exception, $request)) {
+			$level = LOG_ERR;
+			Log::write($level, $this->getMessage($request, $exception), ['404']);
 			return;
 		}
 
-		$whoops = $this->getWhoopsInstance();
-		$whoops->pushHandler($this->getHandler());
-		$whoops->handleError($error['level'], $error['description'], $error['file'], $error['line']);
+		parent::logException($request, $exception);
 	}
 
 	/**
-	 * @param \Exception $exception
-	 * @return void
+	 * @param \Exception $exception The exception to handle.
+	 * @param \Psr\Http\Message\ServerRequestInterface $request The request.
+	 * @param \Psr\Http\Message\ResponseInterface $response The response.
+	 * @return \Psr\Http\Message\ResponseInterface A response
 	 */
-	protected function _displayException($exception) {
+	public function handleException($exception, $request, $response) {
 		if (!Configure::read('debug')) {
-			parent::_displayException($exception);
+			parent::handleException($exception, $request, $response);
 		}
 
 		$whoops = $this->getWhoopsInstance();
 		$whoops->pushHandler($this->getHandler());
 		$whoops->handleException($exception);
+
+		//Won't be reached anymore
+		return $response;
 	}
 
 	/**
