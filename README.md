@@ -4,9 +4,9 @@
 [![Minimum PHP Version](http://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg)](https://php.net/)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://packagist.org/packages/dereuromark/cakephp-whoops)
 
-# Whoops
+# Whoops for CakePHP
 
-Built to seamlessly integrate [Whoops] with [CakePHP 3].
+Seamlessly integrate [Whoops] into [CakePHP 3] applications.
 
 ## Install
 
@@ -16,8 +16,8 @@ Using [Composer]:
 composer require dereuromark/cakephp-whoops
 ```
 
-As this plugin only offers a Whoops handler for CakePHP, there is no need to
-enable it per se. You only need to configure that handler instead of CakePHP's own
+As this package only offers a Whoops handler for CakePHP, there is no need to
+enable it (no `Plugin::load()` call). You only need to configure that handler instead of CakePHP's own
 `ErrorHandler` by replacing the following line in `bootstrap.php`:
 
 ```php
