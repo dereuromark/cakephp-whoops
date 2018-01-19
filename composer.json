@@ -28,12 +28,12 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Gourmet\\Whoops\\": "src/"
+			"CakephpWhoops\\": "src/"
 		}
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Gourmet\\Whoops\\Test\\": "tests/"
+			"CakephpWhoops\\Test\\": "tests/"
 		}
 	},
 	"scripts": {

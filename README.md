@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/gourmet/whoops.png?branch=master)](https://travis-ci.org/gourmet/whoops) [![Coverage Status](https://coveralls.io/repos/gourmet/whoops/badge.png?branch=master)](https://coveralls.io/r/gourmet/whoops?branch=master) [![Total Downloads](https://poser.pugx.org/gourmet/whoops/d/total.png)](https://packagist.org/packages/gourmet/whoops) [![Latest Stable Version](https://poser.pugx.org/gourmet/whoops/v/stable.png)](https://packagist.org/packages/gourmet/whoops)
+[![Build Status](https://travis-ci.org/dereuromark/cakephp-whoops.png?branch=master)](https://travis-ci.org/gourmet/whoops) [![Coverage Status](https://coveralls.io/repos/gourmet/whoops/badge.png?branch=master)](https://coveralls.io/r/gourmet/whoops?branch=master) [![Total Downloads](https://poser.pugx.org/gourmet/whoops/d/total.png)](https://packagist.org/packages/gourmet/whoops) [![Latest Stable Version](https://poser.pugx.org/gourmet/whoops/v/stable.png)](https://packagist.org/packages/gourmet/whoops)
 
 # Whoops
 
@@ -9,11 +9,11 @@ Built to seamlessly integrate [Whoops] with [CakePHP 3].
 Using [Composer]:
 
 ```
-composer require gourmet/whoops
+composer require dereuromark/cakephp-whoops
 ```
 
 As this plugin only offers a Whoops handler for CakePHP, there is no need to
-enable it per se. You only need to configure that handler instead of Cake's own
+enable it per se. You only need to configure that handler instead of CakePHP's own
 `ErrorHandler` by replacing the following line in `bootstrap.php`:
 
 ```php
@@ -23,13 +23,13 @@ enable it per se. You only need to configure that handler instead of Cake's own
 with the Whoops handler:
 
 ```php
-(new \Gourmet\Whoops\Error\WhoopsHandler(Configure::read('Error')))->register();
+(new \CakephpWhoops\Error\WhoopsHandler(Configure::read('Error')))->register();
 ```
 
 When using new Application.php and Middleware approach, you also need to adjust that:
 ```php
 // Replace ErrorHandlerMiddleware with
- ->add(new \Gourmet\Whoops\Error\Middleware\WhoopsHandlerMiddleware())
+ ->add(new \CakephpWhoops\Error\Middleware\WhoopsHandlerMiddleware())
 ```
 
 That's it!
@@ -51,6 +51,8 @@ If you are using a VM, e.g. CakeBox, you will also need the path mapping:
 		'userBasePath' => 'C:\wamp\www\cakebox\Apps\my-app.local',
 		'serverBasePath' => '/home/vagrant/Apps/my-app.local',
 ```
+
+See the Wiki for more details on different OS and Browsers.
 
 ## License
 
