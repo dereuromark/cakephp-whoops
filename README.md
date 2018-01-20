@@ -10,6 +10,8 @@ Seamlessly integrate [Whoops] into [CakePHP 3] applications.
 
 Demo-Video: [Linux Mint + Firefox](https://streamable.com/s/h63t3/xweicf)
 
+Demo-Application: [Sandbox](https://github.com/dereuromark/cakephp-sandbox)
+
 ## Install
 
 Using [Composer]:
