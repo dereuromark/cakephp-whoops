@@ -8,6 +8,8 @@
 
 Seamlessly integrate [Whoops] into [CakePHP 3] applications.
 
+<div style="width:100%;height:0px;position:relative;padding-bottom:46.162%;"><iframe src="https://streamable.com/s/h63t3/xweicf" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+
 ## Install
 
 Using [Composer]:
