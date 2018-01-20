@@ -75,10 +75,12 @@ It will not just ignore notices and other errors, but display them the same way 
 Usually, when a variable is not found, all following code can also not yield any useful results, as the example below shows.
 Better to code cleaner in the first place and to avoid any warning or notice to be thrown in the first place.
 
-Before: 
+Before
+
 ![Screenshot](docs/cake.png)
 
 After:
+
 ![Screenshot](docs/whoops.png)
 
 [CakePHP 3]:https://cakephp.org
