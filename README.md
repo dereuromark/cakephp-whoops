@@ -39,8 +39,6 @@ When using new Application.php and Middleware approach, you also need to adjust 
 // Replace ErrorHandlerMiddleware with
  ->add(new \CakephpWhoops\Error\Middleware\WhoopsHandlerMiddleware())
 ```
-If you don't need the middleware for special headers or other error add-ons, you can also just remove that one.
-The low-level (bootstrap) handler will catch and process those exceptions then, as well.
 
 ### Debug Mode
 An important note: This plugin is installed as require dependency, but even so it is more used as require-dev one.
