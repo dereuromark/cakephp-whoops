@@ -32,6 +32,7 @@ class WhoopsHandler extends ErrorHandler {
 	protected function _displayException($exception) {
 		if (!Configure::read('debug')) {
 			parent::_displayException($exception);
+			return;
 		}
 
 		$whoops = $this->getWhoopsInstance();
