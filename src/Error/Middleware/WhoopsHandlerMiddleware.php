@@ -25,7 +25,7 @@ class WhoopsHandlerMiddleware extends ErrorHandlerMiddleware {
 	 */
 	public function handleException($exception, $request, $response) {
 		if (!Configure::read('debug')) {
-			parent::handleException($exception, $request, $response);
+			return parent::handleException($exception, $request, $response);
 		}
 
 		$whoops = $this->getWhoopsInstance();
