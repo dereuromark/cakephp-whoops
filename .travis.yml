@@ -22,7 +22,7 @@ matrix:
 before_script:
   - composer install --prefer-source --no-interaction
 
-  - if [[ $PHPCS != 1 ]]; then composer require phpunit/phpunit; fi
+  - if [[ $PHPCS != 1 ]]; then composer require phpunit/phpunit:"^5.7.14|^6.0"; fi
 
   - phpenv rehash
   - set +H
