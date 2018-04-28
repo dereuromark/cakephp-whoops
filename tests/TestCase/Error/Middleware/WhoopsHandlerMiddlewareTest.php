@@ -21,6 +21,8 @@ class WhoopsHandlerMiddlewareTest extends TestCase {
 	 */
 	public function testMiddleware() {
 		new WhoopsHandlerMiddleware();
+
+		$this->assertTrue(true);
 	}
 
 }
