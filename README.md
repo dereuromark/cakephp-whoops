@@ -66,6 +66,12 @@ If you are using a VM, e.g. CakeBox, you will also need the path mapping:
 		'serverBasePath' => '/home/vagrant/Apps/my-app.local',
 ```
 
+
+If you would like to override the default url handler (phpstorm://) you could you so by setting the ```ideLinkPattern``` option to a proper url handler
+
+* PhpStorm: ```phpstorm://open?file=%s&line=%s```
+* Visual Studio Code: ```vscode://file/%s:%s```
+
 See the Wiki for more details on different OS and Browsers.
 
 ## Strictness
