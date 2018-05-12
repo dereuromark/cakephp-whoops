@@ -67,7 +67,7 @@ If you are using a VM, e.g. CakeBox, you will also need the path mapping:
 ```
 
 
-If you would like to override the default url handler (phpstorm://) you could you so by setting the ```ideLinkPattern``` option to a proper url handler
+If you would like to override the default url handler (phpstorm://) you could do so by setting the ```ideLinkPattern``` option to a proper url handler
 
 * PhpStorm: ```phpstorm://open?file=%s&line=%s```
 * Visual Studio Code: ```vscode://file/%s:%s```
