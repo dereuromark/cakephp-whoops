@@ -24,7 +24,7 @@ class WhoopsHandlerMiddleware extends ErrorHandlerMiddleware {
 	 * @return \Psr\Http\Message\ResponseInterface A response
 	 */
 	public function handleException($exception, $request, $response) {
-		if (!Configure::read('debug')) {
+		if (!Configure::read('debug') || PHP_SAPI == 'cli') {
 			return parent::handleException($exception, $request, $response);
 		}
 
