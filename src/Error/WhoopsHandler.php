@@ -42,14 +42,14 @@ class WhoopsHandler extends ErrorHandler {
 
 		// Include all attributes defined in Cake Exception as a data table
 		if ($exception instanceof CakeException) {
-            $handler->addDataTable('Cake Exception', $exception->getAttributes());
-        }
+			$handler->addDataTable('Cake Exception', $exception->getAttributes());
+		}
 
-        // Include all request parameters as a data table
-        $request = Router::getRequest(true);
-        if ($request instanceof ServerRequest) {
-        	$handler->addDataTable('Cake Request', $request->params);
-        }
+		// Include all request parameters as a data table
+		$request = Router::getRequest(true);
+		if ($request instanceof ServerRequest) {
+			$handler->addDataTable('Cake Request', $request->params);
+		}
 
 		$whoops = $this->getWhoopsInstance();
 		$whoops->pushHandler($handler);
