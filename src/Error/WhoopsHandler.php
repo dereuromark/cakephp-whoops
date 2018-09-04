@@ -3,7 +3,10 @@
 namespace CakephpWhoops\Error;
 
 use Cake\Core\Configure;
+use Cake\Core\Exception\Exception as CakeException;
 use Cake\Error\ErrorHandler;
+use Cake\Http\ServerRequest;
+use Cake\Routing\Router;
 
 class WhoopsHandler extends ErrorHandler {
 
@@ -35,8 +38,21 @@ class WhoopsHandler extends ErrorHandler {
 			return;
 		}
 
+		$handler = $this->getHandler();
+
+		// Include all attributes defined in Cake Exception as a data table
+		if ($exception instanceof CakeException) {
+            $handler->addDataTable('Cake Exception', $exception->getAttributes());
+        }
+
+        // Include all request parameters as a data table
+        $request = Router::getRequest(true);
+        if ($request instanceof ServerRequest) {
+        	$handler->addDataTable('Cake Request', $request->params);
+        }
+
 		$whoops = $this->getWhoopsInstance();
-		$whoops->pushHandler($this->getHandler());
+		$whoops->pushHandler($handler);
 		$whoops->handleException($exception);
 	}
 
