@@ -7,7 +7,7 @@
 		"whoops",
 		"error handler"
 	],
-	"homepage": "http://github.com/dereuromark/cakephp-whoops",
+	"homepage": "https://github.com/dereuromark/cakephp-whoops",
 	"license": "MIT",
 	"authors": [
 		{
@@ -22,8 +22,8 @@
 		}
 	],
 	"support": {
-		"issues": "http://github.com/dereuromark/cakephp-whoops/issues",
-		"source": "http://github.com/dereuromark/cakephp-whoops"
+		"issues": "https://github.com/dereuromark/cakephp-whoops/issues",
+		"source": "https://github.com/dereuromark/cakephp-whoops"
 	},
 	"require": {
 		"php": ">=5.6",
