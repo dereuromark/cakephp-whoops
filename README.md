@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/dereuromark/cakephp-whoops.svg?branch=master)](https://travis-ci.org/dereuromark/cakephp-whoops) 
 [![Total Downloads](https://poser.pugx.org/dereuromark/cakephp-whoops/d/total.svg)](https://packagist.org/packages/dereuromark/cakephp-whoops) 
 [![Latest Stable Version](https://poser.pugx.org/dereuromark/cakephp-whoops/v/stable.svg)](https://packagist.org/packages/dereuromark/cakephp-whoops)
-[![Minimum PHP Version](http://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg)](https://php.net/)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg)](https://php.net/)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://packagist.org/packages/dereuromark/cakephp-whoops)
 
 # Whoops for CakePHP
