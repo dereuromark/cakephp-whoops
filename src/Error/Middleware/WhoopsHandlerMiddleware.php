@@ -17,6 +17,8 @@ class WhoopsHandlerMiddleware extends ErrorHandlerMiddleware {
 
 	use WhoopsTrait;
 
+	const PHP_SAPI_CLI = 'cli';
+
 	/**
 	 * @param \Exception $exception The exception to handle.
 	 * @param \Psr\Http\Message\ServerRequestInterface $request The request.
@@ -24,7 +26,7 @@ class WhoopsHandlerMiddleware extends ErrorHandlerMiddleware {
 	 * @return \Psr\Http\Message\ResponseInterface A response
 	 */
 	public function handleException($exception, $request, $response) {
-		if (!Configure::read('debug') || PHP_SAPI == 'cli' || $request->is('json')) {
+		if (!Configure::read('debug') || PHP_SAPI === static::PHP_SAPI_CLI || $request->is('json')) {
 			return parent::handleException($exception, $request, $response);
 		}
 
