@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.com/dereuromark/cakephp-whoops.svg?branch=master)](https://travis-ci.com/dereuromark/cakephp-whoops) 
+[![CI](https://github.com/dereuromark/cakephp-whoops/workflows/CI/badge.svg?branch=master)](https://github.com/dereuromark/cakephp-whoops/actions?query=workflow%3ACI+branch%3Amaster) 
 [![Total Downloads](https://poser.pugx.org/dereuromark/cakephp-whoops/d/total.svg)](https://packagist.org/packages/dereuromark/cakephp-whoops) 
 [![Latest Stable Version](https://poser.pugx.org/dereuromark/cakephp-whoops/v/stable.svg)](https://packagist.org/packages/dereuromark/cakephp-whoops)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.2-8892BF.svg)](https://php.net/)
