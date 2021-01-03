@@ -1,0 +1,8 @@
+parameters:
+	level: 8
+	paths:
+		- src/
+	checkMissingIterableValueType: false
+	treatPhpDocTypesAsCertain: false
+	bootstrapFiles:
+		- tests/bootstrap.php

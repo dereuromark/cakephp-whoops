@@ -48,7 +48,7 @@ class WhoopsHandler extends ErrorHandler {
 		}
 
 		// Include all request parameters as a data table
-		$request = Router::getRequest(true);
+		$request = Router::getRequest();
 		if ($request instanceof ServerRequest) {
 			$handler->addDataTable('Cake Request', $request->getAttribute('params'));
 		}

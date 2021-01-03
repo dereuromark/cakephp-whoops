@@ -24,7 +24,7 @@ class WhoopsHandlerMiddleware extends ErrorHandlerMiddleware {
 
 	/**
 	 * @param \Throwable $exception The exception to handle.
-	 * @param \Psr\Http\Message\ServerRequestInterface $request The request.
+	 * @param \Cake\Http\ServerRequest $request The request.
 	 * @return \Psr\Http\Message\ResponseInterface A response
 	 */
 	public function handleException(Throwable $exception, ServerRequestInterface $request): ResponseInterface {
