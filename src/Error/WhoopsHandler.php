@@ -21,6 +21,7 @@ class WhoopsHandler extends ErrorHandler {
 	protected function _displayError(array $error, bool $debug): void {
 		if (!$debug) {
 			parent::_displayError($error, $debug);
+
 			return;
 		}
 
@@ -31,12 +32,13 @@ class WhoopsHandler extends ErrorHandler {
 
 	/**
 	 * @param \Throwable $exception The exception to display.
-	 * @return void
 	 * @throws \Exception When the chosen exception renderer is invalid.
+	 * @return void
 	 */
 	protected function _displayException(Throwable $exception): void {
 		if (!Configure::read('debug')) {
 			parent::_displayException($exception);
+
 			return;
 		}
 

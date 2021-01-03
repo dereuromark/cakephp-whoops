@@ -21,13 +21,14 @@ trait WhoopsTrait {
 		if (empty($this->_whoops)) {
 			$this->_whoops = new Run();
 		}
+
 		return $this->_whoops;
 	}
 
 	/**
 	 * @return \Whoops\Handler\PrettyPageHandler
 	 */
-	protected function getHandler(): HandlerInterface  {
+	protected function getHandler(): HandlerInterface {
 		$handler = new PrettyPageHandler();
 		if (!Configure::read('Whoops.editor')) {
 			return $handler;
@@ -44,6 +45,7 @@ trait WhoopsTrait {
 			if (!Configure::read('Whoops.asAjax', false)) {
 				return $url;
 			}
+
 			return [
 				'url' => $url,
 				'ajax' => true,

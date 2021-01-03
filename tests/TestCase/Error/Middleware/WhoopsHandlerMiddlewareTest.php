@@ -2,8 +2,8 @@
 
 namespace CakephpWhoops\Test\TestCase\Error\Middleware;
 
-use CakephpWhoops\Error\Middleware\WhoopsHandlerMiddleware;
 use Cake\TestSuite\TestCase;
+use CakephpWhoops\Error\Middleware\WhoopsHandlerMiddleware;
 
 /**
  * Error handling middleware.

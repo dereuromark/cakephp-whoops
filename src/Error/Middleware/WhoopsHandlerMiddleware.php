@@ -2,9 +2,9 @@
 
 namespace CakephpWhoops\Error\Middleware;
 
-use CakephpWhoops\Error\WhoopsTrait;
 use Cake\Core\Configure;
 use Cake\Error\Middleware\ErrorHandlerMiddleware;
+use CakephpWhoops\Error\WhoopsTrait;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Throwable;
@@ -20,7 +20,7 @@ class WhoopsHandlerMiddleware extends ErrorHandlerMiddleware {
 
 	use WhoopsTrait;
 
-	const PHP_SAPI_CLI = 'cli';
+	public const PHP_SAPI_CLI = 'cli';
 
 	/**
 	 * @param \Throwable $exception The exception to handle.
