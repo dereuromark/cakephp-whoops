@@ -5,6 +5,9 @@ namespace CakephpWhoops\Error\Middleware;
 use CakephpWhoops\Error\WhoopsTrait;
 use Cake\Core\Configure;
 use Cake\Error\Middleware\ErrorHandlerMiddleware;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Throwable;
 
 /**
  * Error handling middleware.
@@ -20,14 +23,13 @@ class WhoopsHandlerMiddleware extends ErrorHandlerMiddleware {
 	const PHP_SAPI_CLI = 'cli';
 
 	/**
-	 * @param \Exception $exception The exception to handle.
+	 * @param \Throwable $exception The exception to handle.
 	 * @param \Psr\Http\Message\ServerRequestInterface $request The request.
-	 * @param \Psr\Http\Message\ResponseInterface $response The response.
 	 * @return \Psr\Http\Message\ResponseInterface A response
 	 */
-	public function handleException($exception, $request, $response) {
+	public function handleException(Throwable $exception, ServerRequestInterface $request): ResponseInterface {
 		if (!Configure::read('debug') || PHP_SAPI === static::PHP_SAPI_CLI || $request->is('json')) {
-			return parent::handleException($exception, $request, $response);
+			return parent::handleException($exception, $request);
 		}
 
 		$whoops = $this->getWhoopsInstance();
@@ -35,7 +37,7 @@ class WhoopsHandlerMiddleware extends ErrorHandlerMiddleware {
 		$whoops->handleException($exception);
 
 		//Won't be reached anymore
-		return $response;
+		return parent::handleException($exception, $request);
 	}
 
 }

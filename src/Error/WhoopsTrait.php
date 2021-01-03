@@ -3,6 +3,7 @@
 namespace CakephpWhoops\Error;
 
 use Cake\Core\Configure;
+use Whoops\Handler\HandlerInterface;
 use Whoops\Handler\PrettyPageHandler;
 use Whoops\Run;
 
@@ -16,7 +17,7 @@ trait WhoopsTrait {
 	/**
 	 * @return \Whoops\Run
 	 */
-	protected function getWhoopsInstance() {
+	protected function getWhoopsInstance(): Run {
 		if (empty($this->_whoops)) {
 			$this->_whoops = new Run();
 		}
@@ -26,7 +27,7 @@ trait WhoopsTrait {
 	/**
 	 * @return \Whoops\Handler\PrettyPageHandler
 	 */
-	protected function getHandler() {
+	protected function getHandler(): HandlerInterface  {
 		$handler = new PrettyPageHandler();
 		if (!Configure::read('Whoops.editor')) {
 			return $handler;

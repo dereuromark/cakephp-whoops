@@ -7,17 +7,18 @@ use Cake\Core\Exception\Exception as CakeException;
 use Cake\Error\ErrorHandler;
 use Cake\Http\ServerRequest;
 use Cake\Routing\Router;
+use Throwable;
 
 class WhoopsHandler extends ErrorHandler {
 
 	use WhoopsTrait;
 
 	/**
-	 * @param array $error
-	 * @param bool $debug
+	 * @param array $error An array of error data.
+	 * @param bool $debug Whether or not the app is in debug mode.
 	 * @return void
 	 */
-	protected function _displayError($error, $debug) {
+	protected function _displayError(array $error, bool $debug): void {
 		if (!$debug) {
 			parent::_displayError($error, $debug);
 			return;
@@ -29,10 +30,11 @@ class WhoopsHandler extends ErrorHandler {
 	}
 
 	/**
-	 * @param \Exception $exception
+	 * @param \Throwable $exception The exception to display.
 	 * @return void
+	 * @throws \Exception When the chosen exception renderer is invalid.
 	 */
-	protected function _displayException($exception) {
+	protected function _displayException(Throwable $exception): void {
 		if (!Configure::read('debug')) {
 			parent::_displayException($exception);
 			return;
@@ -48,7 +50,7 @@ class WhoopsHandler extends ErrorHandler {
 		// Include all request parameters as a data table
 		$request = Router::getRequest(true);
 		if ($request instanceof ServerRequest) {
-			$handler->addDataTable('Cake Request', $request->params);
+			$handler->addDataTable('Cake Request', $request->getAttribute('params'));
 		}
 
 		$whoops = $this->getWhoopsInstance();
