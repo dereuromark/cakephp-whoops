@@ -35,7 +35,7 @@ with the Whoops handler:
 When using new Application.php and Middleware approach, you also need to adjust that:
 ```php
 // Replace ErrorHandlerMiddleware with
- ->add(new \CakephpWhoops\Error\Middleware\WhoopsHandlerMiddleware())
+ ->add(new \CakephpWhoops\Error\Middleware\WhoopsHandlerMiddleware(Configure::read('Error')))
 ```
 
 ### Debug Mode
