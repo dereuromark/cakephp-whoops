@@ -3,7 +3,7 @@
 namespace CakephpWhoops\Error;
 
 use Cake\Core\Configure;
-use Cake\Core\Exception\Exception as CakeException;
+use Cake\Core\Exception\CakeException;
 use Cake\Error\ErrorHandler;
 use Cake\Http\ServerRequest;
 use Cake\Routing\Router;

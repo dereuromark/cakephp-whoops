@@ -10,7 +10,7 @@ use Whoops\Run;
 trait WhoopsTrait {
 
 	/**
-	 * @var \Whoops\Run
+	 * @var \Whoops\Run|null
 	 */
 	protected $_whoops;
 
@@ -18,7 +18,7 @@ trait WhoopsTrait {
 	 * @return \Whoops\Run
 	 */
 	protected function getWhoopsInstance(): Run {
-		if (empty($this->_whoops)) {
+		if ($this->_whoops === null) {
 			$this->_whoops = new Run();
 		}
 

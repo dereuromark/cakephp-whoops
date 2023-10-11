@@ -20,6 +20,9 @@ class WhoopsHandlerMiddleware extends ErrorHandlerMiddleware {
 
 	use WhoopsTrait;
 
+	/**
+	 * @var string
+	 */
 	public const PHP_SAPI_CLI = 'cli';
 
 	/**
