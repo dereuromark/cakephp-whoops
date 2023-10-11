@@ -1,5 +1,5 @@
-[![CI](https://github.com/dereuromark/cakephp-whoops/workflows/CI/badge.svg?branch=master)](https://github.com/dereuromark/cakephp-whoops/actions?query=workflow%3ACI+branch%3Amaster) 
-[![Total Downloads](https://poser.pugx.org/dereuromark/cakephp-whoops/d/total.svg)](https://packagist.org/packages/dereuromark/cakephp-whoops) 
+[![CI](https://github.com/dereuromark/cakephp-whoops/workflows/CI/badge.svg?branch=master)](https://github.com/dereuromark/cakephp-whoops/actions?query=workflow%3ACI+branch%3Amaster)
+[![Total Downloads](https://poser.pugx.org/dereuromark/cakephp-whoops/d/total.svg)](https://packagist.org/packages/dereuromark/cakephp-whoops)
 [![Latest Stable Version](https://poser.pugx.org/dereuromark/cakephp-whoops/v/stable.svg)](https://packagist.org/packages/dereuromark/cakephp-whoops)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.2-8892BF.svg)](https://php.net/)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://packagist.org/packages/dereuromark/cakephp-whoops)
@@ -19,17 +19,13 @@ composer require dereuromark/cakephp-whoops
 ```
 
 As this package only offers a Whoops handler for CakePHP, there is no need to
-enable it (no `Plugin::load()` call). You only need to configure that handler instead of CakePHP's own
-`ErrorHandler` by replacing the following line in `bootstrap.php`:
+enable it (no `->addPlugin()` call). You only need to configure the renderer classes inside your `config/app.php` or `config/app_local.php`:
 
 ```php
-(new ErrorHandler(Configure::read('Error')))->register();
-```
-
-with the Whoops handler:
-
-```php
-(new \CakephpWhoops\Error\WhoopsHandler(Configure::read('Error')))->register();
+'Error' => [
+	'exceptionRenderer' => \CakephpWhoops\Error\WhoopsExceptionRenderer::class,
+	'errorRenderer' => \CakephpWhoops\Error\WhoopsErrorRenderer::class
+],
 ```
 
 When using new Application.php and Middleware approach, you also need to adjust that:
@@ -87,6 +83,6 @@ After:
 
 ![Screenshot](docs/whoops.png)
 
-[CakePHP 3]:https://cakephp.org
+[CakePHP]:https://cakephp.org
 [Composer]:https://getcomposer.org
 [Whoops]:https://filp.github.io/whoops/

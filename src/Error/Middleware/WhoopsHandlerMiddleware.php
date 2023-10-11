@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace CakephpWhoops\Error\Middleware;
 
@@ -20,6 +21,9 @@ class WhoopsHandlerMiddleware extends ErrorHandlerMiddleware {
 
 	use WhoopsTrait;
 
+	/**
+	 * @var string
+	 */
 	public const PHP_SAPI_CLI = 'cli';
 
 	/**

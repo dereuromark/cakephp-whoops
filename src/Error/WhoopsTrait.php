@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace CakephpWhoops\Error;
 
@@ -9,10 +10,7 @@ use Whoops\Run;
 
 trait WhoopsTrait {
 
-	/**
-	 * @var \Whoops\Run
-	 */
-	protected $_whoops;
+	protected Run $_whoops;
 
 	/**
 	 * @return \Whoops\Run

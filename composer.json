@@ -26,12 +26,13 @@
 		"source": "https://github.com/dereuromark/cakephp-whoops"
 	},
 	"require": {
-		"php": ">=7.2",
-		"cakephp/cakephp": "^4.0",
+		"php": ">=8.1",
+		"cakephp/cakephp": "^5.0",
 		"filp/whoops": "^2.0"
 	},
 	"require-dev": {
-		"fig-r/psr2r-sniffer": "dev-master"
+		"fig-r/psr2r-sniffer": "dev-master",
+		"phpunit/phpunit": "^10.1"
 	},
 	"autoload": {
 		"psr-4": {
@@ -44,12 +45,16 @@
 		}
 	},
 	"scripts": {
-		"test": "php phpunit.phar",
-		"test-setup": "[ ! -f phpunit.phar ] && wget https://phar.phpunit.de/phpunit-8.5.13.phar && mv phpunit-8.5.13.phar phpunit.phar || true",
-		"test-coverage" : "php phpunit.phar --log-junit tmp/coverage/unitreport.xml --coverage-html tmp/coverage --coverage-clover tmp/coverage/coverage.xml",
+		"test": "vendor/bin/phpunit",
+		"test-coverage" : "vendor/bin/phpunit --log-junit tmp/coverage/unitreport.xml --coverage-html tmp/coverage --coverage-clover tmp/coverage/coverage.xml",
 		"stan": "phpstan analyse",
-		"stan-setup": "cp composer.json composer.backup && composer require --dev phpstan/phpstan:^0.12 && mv composer.backup composer.json",
+		"stan-setup": "cp composer.json composer.backup && composer require --dev phpstan/phpstan:^1.10 && mv composer.backup composer.json",
 		"cs-check": "phpcs -p --standard=vendor/fig-r/psr2r-sniffer/PSR2R/ruleset.xml --extensions=php src/ tests/",
 		"cs-fix": "phpcbf -v --standard=vendor/fig-r/psr2r-sniffer/PSR2R/ruleset.xml --extensions=php src/ tests/"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
 	}
 }
