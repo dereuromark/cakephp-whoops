@@ -10,13 +10,13 @@ use Whoops\Run;
 
 trait WhoopsTrait {
 
-	protected Run $_whoops;
+	protected ?Run $_whoops = null;
 
 	/**
 	 * @return \Whoops\Run
 	 */
 	protected function getWhoopsInstance(): Run {
-		if (empty($this->_whoops)) {
+		if ($this->_whoops === null) {
 			$this->_whoops = new Run();
 		}
 

@@ -31,8 +31,8 @@
 		"filp/whoops": "^2.0"
 	},
 	"require-dev": {
-		"fig-r/psr2r-sniffer": "dev-master",
-		"phpunit/phpunit": "^10.1"
+		"phpunit/phpunit": "^10.1",
+		"fig-r/psr2r-sniffer": "dev-master"
 	},
 	"autoload": {
 		"psr-4": {

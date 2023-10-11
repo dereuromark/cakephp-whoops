@@ -11,7 +11,7 @@
 	</php>
 	<testsuites>
 		<testsuite name="whoops">
-			<directory>tests/</directory>
+			<directory>tests/TestCase/</directory>
 		</testsuite>
 	</testsuites>
 	<source>
