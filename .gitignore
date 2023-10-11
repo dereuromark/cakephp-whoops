@@ -1,6 +1,8 @@
-/composer.lock
-/phpunit.phar
-/vendor/
-/tmp/
-/composer.phar
-/.idea
+composer.lock
+phpunit.phar
+.phpunit.result.cache
+vendor/
+tmp/
+composer.phar
+.idea/
+nbproject/
